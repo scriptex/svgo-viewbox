@@ -6,9 +6,11 @@
 [![npm](https://img.shields.io/npm/v/svgo-viewbox.svg)](https://www.npmjs.com/package/svgo-viewbox)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/scriptex/svgo-viewbox/README.md)](https://github.com/scriptex/svgo-viewbox/)
 
-# Add `viewBox` to SVG files using SVGO
+# svgo-viewBox
 
-> Node JS script which uses SVGO and a custom plugin in order to add `viewBox` attribute to all SVG files in a folder.
+> Add `viewBox` to SVG files using SVGO
+
+Node JS script which uses SVGO and a custom plugin in order to add `viewBox` attribute to all SVG files in a folder.
 
 ## Dependencies
 
@@ -20,17 +22,18 @@
 ## Usage
 
 ```sh
-svgoViewBox --help
+svgo-viewbox --help
 
 #	Usage
-#	  $ svgoViewBox --arg1 --arg2
+#	  $ svgo-viewbox --arg1 --arg2
 #
 #	Options
 #	  --input, -i		path to folder which contains SVG files
 #	  --svgo-file, -f 	path to SVGO configuration file in YAML format
 #
 #	Examples
-#	  $ svgoViewBox --input ./assets/images/svg --svgo-file ./svgo.yml
+#	  $ svgo-viewbox --input ./assets/images/svg --svgo-file ./svgo.yml
+#     $ svgo-viewbox --i ./assets/images/svg
 ```
 
 ### As an NPM script:
@@ -50,7 +53,7 @@ then add a new NPM script in your `package.json` file:
 ```json
 {
 	"scripts": {
-		"svgo-viewbox": "svgoViewBox -i ./assets/images/svg -f ./svgo.yml"
+		"svgo-viewbox": "svgo-viewbox -i ./assets/images/svg -f ./svgo.yml"
 	}
 }
 ```
@@ -70,7 +73,7 @@ yarn global add svgo-viewbox
 then use it in your terminal
 
 ```sh
-svgoViewBox -i ./assets/images/svg -f ./svgo.yml
+svgo-viewbox -i ./assets/images/svg -f ./svgo.yml
 ```
 
 ### Without installing
