@@ -8,14 +8,14 @@ const svgoViewBox = require('.');
 const cli = meow(
 	`
 	Usage
-	  $ svgoViewBox --arg1 --arg2
+	  $ svgo-viewbox --arg1 --arg2
 
 	Options
 	  --input, -i		path to folder which contains SVG files
 	  --svgo-file, -f 	path to SVGO configuration file in YAML format
 
 	Examples
-	  $ svgoViewBox --input ./assets/images/svg --svgo-file ./svgo.yml
+	  $ svgo-viewbox --input ./assets/images/svg --svgo-file ./svgo.yml
 `,
 	{
 		flags: {

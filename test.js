@@ -25,8 +25,6 @@ svgoViewBox({
 		const parsed = parse(svg);
 		const hasViewBox = !!parsed.children[0].properties.viewBox;
 
-		console.log(parsed.children[0].properties);
-
 		t.ok(hasViewBox, 'Has viewBox attribute');
 		t.end();
 	});
