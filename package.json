@@ -1,0 +1,19 @@
+{
+    "name": "initial-commit",
+    "version": "1.0.0",
+    "description": "Starting template for repository",
+    "scripts": {},
+    "keywords": [],
+    "author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
+    "repository": "https://github.com/scriptex/initial-commit",
+    "bugs": {
+      "url": "https://github.com/scriptex/initial-commit/issues",
+      "email": "scriptex.bg@gmail.com"
+    },
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {},
+    "browserslist": [],
+    "main": "index.js",
+    "private": true
+}
