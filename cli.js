@@ -12,10 +12,10 @@ const cli = meow(
 
 	Options
 	  --input, -i		path to folder which contains SVG files
-	  --svgo-file, -f 	path to SVGO configuration file in YAML format
+	  --svgo-file, -f 	path to SVGO configuration file in JS format (https://github.com/svg/svgo#configuration)
 
 	Examples
-	  $ svgo-viewbox --input ./assets/images/svg --svgo-file ./svgo.yml
+	  $ svgo-viewbox --input ./assets/images/svg --svgo-file ./svgo.config.js
 `,
 	{
 		flags: {
