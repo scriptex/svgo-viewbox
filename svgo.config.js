@@ -60,7 +60,7 @@ module.exports = {
 			name: 'cleanupIDs',
 			active: true,
 			params: {
-				prefix: `id-${counter++}`
+				prefix: `svgo-viewbox-id-${counter++}`
 			}
 		},
 		{
