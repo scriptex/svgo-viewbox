@@ -23,7 +23,7 @@ const cli = meow(
 				type: 'string',
 				alias: 'i'
 			},
-			'svgo-file': {
+			svgoFile: {
 				type: 'string',
 				alias: 'f'
 			}
