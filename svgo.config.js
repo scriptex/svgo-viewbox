@@ -1,3 +1,5 @@
+/* deepscan-disable */
+
 const { extendDefaultPlugins } = require('svgo');
 
 let counter = 0;
@@ -69,3 +71,5 @@ module.exports = {
 		}
 	])
 };
+
+/* deepscan-enable */
