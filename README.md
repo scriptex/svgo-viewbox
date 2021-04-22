@@ -16,7 +16,7 @@ Node JS script which uses SVGO and a custom plugin in order to add `viewBox` att
 
 1. NodeJS
 2. NPM or Yarn
-3. SVGO installed and configured - you should have an `svgo.yml` file. If you don't, the default config file will be used.
+3. SVGO installed and configured - you should have a `svgo.config.js` file. If you don't, the default config file will be used.
 4. Some SVG files which have `width` and `height` attribute but lack the `viewBox` attribute.
 
 ## Usage
@@ -29,10 +29,10 @@ svgo-viewbox --help
 #
 #	Options
 #	  --input, -i		path to folder which contains SVG files
-#	  --svgo-file, -f 	path to SVGO configuration file in YAML format
+#	  --svgo-file, -f 	path to SVGO configuration file in JS format (https://github.com/svg/svgo#configuration)
 #
 #	Examples
-#	  $ svgo-viewbox --input ./assets/images/svg --svgo-file ./svgo.yml
+#	  $ svgo-viewbox --input ./assets/images/svg --svgo-file ./svgo.config.js
 #     $ svgo-viewbox --i ./assets/images/svg
 ```
 
@@ -53,7 +53,7 @@ then add a new NPM script in your `package.json` file:
 ```json
 {
 	"scripts": {
-		"svgo-viewbox": "svgo-viewbox -i ./assets/images/svg -f ./svgo.yml"
+		"svgo-viewbox": "svgo-viewbox -i ./assets/images/svg -f ./svgo.config.js"
 	}
 }
 ```
@@ -73,13 +73,13 @@ yarn global add svgo-viewbox
 then use it in your terminal
 
 ```sh
-svgo-viewbox -i ./assets/images/svg -f ./svgo.yml
+svgo-viewbox -i ./assets/images/svg -f ./svgo.config.js
 ```
 
 ### Without installing
 
 ```sh
-npx svgo-viewbox -i ./assets/images/svg -f ./svgo.yml
+npx svgo-viewbox -i ./assets/images/svg -f ./svgo.config.js
 ```
 
 ## Support this project
