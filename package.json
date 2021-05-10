@@ -19,7 +19,7 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"meow": "9.0.0",
+		"meow": "10.0.0",
 		"svgo": "2.3.0"
 	},
 	"devDependencies": {
