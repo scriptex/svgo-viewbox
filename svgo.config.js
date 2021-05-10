@@ -1,8 +1,7 @@
 /* deepscan-disable */
+// @ts-nocheck
 
 const { extendDefaultPlugins } = require('svgo');
-
-let counter = 0;
 
 module.exports = {
 	plugins: extendDefaultPlugins([
@@ -62,7 +61,13 @@ module.exports = {
 			name: 'cleanupIDs',
 			active: true,
 			params: {
-				prefix: `svgo-viewbox-id-${counter++}`
+				prefix: {
+					toString() {
+						this.counter = this.counter || 0;
+
+						return `svgo-viewbox-id-${this.counter++}`;
+					}
+				}
 			}
 		},
 		{
