@@ -1,6 +1,6 @@
 {
 	"name": "svgo-viewbox",
-	"version": "2.0.3",
+	"version": "2.0.4",
 	"description": "Add viewBox attribute to your SVGs and then optimize them with SVGO",
 	"scripts": {
 		"test": "tape test.js"
@@ -19,7 +19,7 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"meow": "10.0.0",
+		"meow": "9.0.0",
 		"svgo": "2.3.0"
 	},
 	"devDependencies": {
