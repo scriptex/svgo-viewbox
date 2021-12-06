@@ -1,62 +1,14 @@
-/* deepscan-disable */
-// @ts-nocheck
-
-const { extendDefaultPlugins } = require('svgo');
-
 module.exports = {
-	plugins: extendDefaultPlugins([
-		{
-			name: 'cleanupAttrs',
-			active: true
-		},
-		{
-			name: 'removeDoctype',
-			active: true
-		},
-		{
-			name: 'removeXMLProcInst',
-			active: true
-		},
-		{
-			name: 'removeComments',
-			active: true
-		},
-		{
-			name: 'removeMetadata',
-			active: true
-		},
-		{
-			name: 'removeUselessDefs',
-			active: true
-		},
-		{
-			name: 'removeEditorsNSData',
-			active: true
-		},
-		{
-			name: 'removeEmptyAttrs',
-			active: true
-		},
-		{
-			name: 'removeEmptyText',
-			active: true
-		},
-		{
-			name: 'removeEmptyContainers',
-			active: true
-		},
-		{
-			name: 'cleanupEnableBackground',
-			active: true
-		},
-		{
-			name: 'convertStyleToAttrs',
-			active: true
-		},
-		{
-			name: 'removeUselessStrokeAndFill',
-			active: true
-		},
+	plugins: [
+		'removeDoctype',
+		'removeXMLProcInst',
+		'removeComments',
+		'removeMetadata',
+		'removeEditorsNSData',
+		'cleanupAttrs',
+		'mergeStyles',
+		'inlineStyles',
+		'minifyStyles',
 		{
 			name: 'cleanupIDs',
 			active: true,
@@ -70,11 +22,14 @@ module.exports = {
 				}
 			}
 		},
-		{
-			name: 'removeDimensions',
-			active: true
-		}
-	])
+		'removeUselessDefs',
+		'removeUnknownsAndDefaults',
+		'removeUselessStrokeAndFill',
+		'cleanupEnableBackground',
+		'removeEmptyText',
+		'removeEmptyAttrs',
+		'convertStyleToAttrs',
+		'removeEmptyContainers',
+		'removeDimensions'
+	]
 };
-
-/* deepscan-enable */
