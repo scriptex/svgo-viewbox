@@ -1,33 +1,42 @@
 {
 	"name": "svgo-viewbox",
-	"version": "2.0.4",
+	"version": "2.1.0",
 	"description": "Add viewBox attribute to your SVGs and then optimize them with SVGO",
+	"keywords": [
+		"ViewBox",
+		"SVG ViewBox",
+		"SVG Optimizer",
+		"SVG Optimization",
+		"SVGO Optimizer",
+		"SVGO Optimization",
+		"Image optimization",
+		"Images optimization"
+	],
+	"homepage": "https://github.com/scriptex/svgo-viewbox",
+	"bugs": {
+		"url": "https://github.com/scriptex/svgo-viewbox/issues",
+		"email": "hi@atanas.info"
+	},
+	"license": "MIT",
+	"author": "Atanas Atanasov <hi@atanas.info> (https://atanas.info)",
+	"funding": "https://github.com/sponsors/scriptex",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "github:scriptex/svgo-viewbox"
+	},
+	"bin": {
+		"svgo-viewbox": "cli.js"
+	},
 	"scripts": {
 		"test": "tape test.js"
 	},
-	"keywords": [
-		"SVG",
-		"SVGO",
-		"viewBox",
-		"Images optimization"
-	],
-	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
-	"repository": "https://github.com/scriptex/svgo-viewbox",
-	"bugs": {
-		"url": "https://github.com/scriptex/svgo-viewbox/issues",
-		"email": "scriptex.bg@gmail.com"
-	},
-	"license": "MIT",
 	"dependencies": {
 		"meow": "9.0.0",
 		"svgo": "2.8.0"
 	},
 	"devDependencies": {
 		"svg-parser": "2.0.4",
-		"tape": "5.5.3"
-	},
-	"main": "index.js",
-	"bin": {
-		"svgo-viewbox": "cli.js"
+		"tape": "5.6.1"
 	}
 }
