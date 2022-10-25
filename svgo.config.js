@@ -10,7 +10,7 @@ module.exports = {
 		'inlineStyles',
 		'minifyStyles',
 		{
-			name: 'cleanupIDs',
+			name: 'cleanupIds',
 			active: true,
 			params: {
 				prefix: {
