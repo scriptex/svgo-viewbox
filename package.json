@@ -33,7 +33,7 @@
 	},
 	"dependencies": {
 		"meow": "11.0.0",
-		"svgo": "3.0.1"
+		"svgo": "3.0.2"
 	},
 	"devDependencies": {
 		"svg-parser": "2.0.4",
