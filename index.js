@@ -26,7 +26,7 @@ module.exports = async args => {
 	const { input, svgoFile } = args;
 
 	/**
-	 * @type any
+	 * @type {any}
 	 */
 	let svgoConfig;
 
