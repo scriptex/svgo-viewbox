@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 
 const { resolve } = require('path');
-const { readFileSync } = require('fs');
+const { lstatSync, readFileSync } = require('fs');
 const { readdir, readFile, writeFile } = require('fs').promises;
 
 const { optimize, loadConfig } = require('svgo');
 
 async function getFiles(dir) {
+	if (lstatSync(dir).isFile()) {
+		return [dir];
+	}
+
 	const dirents = await readdir(dir, { withFileTypes: true });
 	const files = await Promise.all(
 		dirents.map(dirent => {
@@ -22,7 +26,7 @@ module.exports = async args => {
 	const { input, svgoFile } = args;
 
 	/**
-	 * @type any
+	 * @type {any}
 	 */
 	let svgoConfig;
 

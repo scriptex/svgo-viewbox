@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-// @ts-nocheck
-
 const meow = require('meow');
 const svgoViewBox = require('.');
 
+// @ts-ignore
 const cli = meow(
 	`
 	Usage
