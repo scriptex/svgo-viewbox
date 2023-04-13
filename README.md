@@ -10,7 +10,7 @@
 
 > Add `viewBox` to SVG files using SVGO
 
-Node JS script which uses SVGO and a custom plugin in order to add `viewBox` attribute to all SVG files in a folder.
+Node JS script which uses SVGO and a custom plugin in order to add `viewBox` attribute to all SVG files in a folder or to a single SVG file.
 
 ## Dependencies
 
@@ -28,12 +28,13 @@ svgo-viewbox --help
 #	  $ svgo-viewbox --arg1 --arg2
 #
 #	Options
-#	  --input, -i		path to folder which contains SVG files
+#	  --input, -i		path to folder which contains SVG files or a single svg file
 #	  --svgo-file, -f 	path to SVGO configuration file in JS format (https://github.com/svg/svgo#configuration)
 #
 #	Examples
 #	  $ svgo-viewbox --input ./assets/images/svg --svgo-file ./svgo.config.js
 #     $ svgo-viewbox --i ./assets/images/svg
+#     $ svgo-viewbox --i ./assets/images/svg/file.svg
 ```
 
 ### As an NPM script:
