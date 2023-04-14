@@ -24,20 +24,20 @@ Node JS script which uses SVGO and a custom plugin in order to add `viewBox` att
 ```sh
 svgo-viewbox --help
 
-#	Usage
-#	  $ svgo-viewbox --arg1 --arg2
+#   Usage
+#       $ svgo-viewbox --arg1 --arg2
 #
-#	Options
-#	  --input, -i		path to folder which contains SVG files or a single svg file
-#	  --svgo-file, -f 	path to SVGO configuration file in JS format (https://github.com/svg/svgo#configuration)
+#   Options
+#       --input, -i		path to folder which contains SVG files or a single svg file
+#       --svgo-file, -f 	path to SVGO configuration file in JS format (https://github.com/svg/svgo#configuration)
 #
-#	Examples
-#	  $ svgo-viewbox --input ./assets/images/svg --svgo-file ./svgo.config.js
-#     $ svgo-viewbox --i ./assets/images/svg
-#     $ svgo-viewbox --i ./assets/images/svg/file.svg
+#   Examples
+#       $ svgo-viewbox --input ./assets/images/svg --svgo-file ./svgo.config.js
+#       $ svgo-viewbox -i ./assets/images/svg
+#       $ svgo-viewbox -i ./assets/images/svg/file.svg
 ```
 
-### As an NPM script:
+### As an NPM script
 
 First install the module as a development dependency
 

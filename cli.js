@@ -3,7 +3,6 @@
 const meow = require('meow');
 const svgoViewBox = require('.');
 
-// @ts-ignore
 const cli = meow(
 	`
 	Usage

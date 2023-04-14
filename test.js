@@ -1,5 +1,4 @@
-// @ts-nocheck
-
+const { exec } = require('child_process');
 const { resolve } = require('path');
 const { existsSync, readFileSync } = require('fs');
 
@@ -18,6 +17,7 @@ function addViewbox(message, input) {
 
 		const svg = readFileSync(file, 'utf-8');
 		const parsed = parse(svg);
+		// @ts-ignore
 		const hasViewBox = !!parsed.children[0].properties.viewBox;
 		const fileExists = existsSync(resolve(__dirname, file));
 
@@ -29,3 +29,7 @@ function addViewbox(message, input) {
 
 addViewbox('Adds viewBox to files in a folder', './assets');
 addViewbox('Adds viewBox to a single file', './assets2/logo.svg');
+
+exec('svgo-viewbox -i ./assets', (err, stdout, stderr) => {
+	console.log({ err, stdout, stderr });
+});
