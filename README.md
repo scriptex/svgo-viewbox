@@ -28,13 +28,14 @@ svgo-viewbox --help
 #       $ svgo-viewbox --arg1 --arg2
 #
 #   Options
-#       --input, -i		path to folder which contains SVG files or a single svg file
-#       --svgo-file, -f 	path to SVGO configuration file in JS format (https://github.com/svg/svgo#configuration)
+#       --input, -i         path to folder which contains SVG files or a single svg file, defaults to current working directory
+#       --svgo-file, -f     path to SVGO configuration file in JS format (https://github.com/svg/svgo#configuration), defaults to the built-in SVGO configuration
 #
 #   Examples
 #       $ svgo-viewbox --input ./assets/images/svg --svgo-file ./svgo.config.js
 #       $ svgo-viewbox -i ./assets/images/svg
 #       $ svgo-viewbox -i ./assets/images/svg/file.svg
+#       $ svgo-viewbox
 ```
 
 ### As an NPM script
