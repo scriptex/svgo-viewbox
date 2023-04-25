@@ -7,11 +7,14 @@ const { parse } = require('svg-parser');
 const svgoViewBox = require('.');
 const { getFiles } = require('./utils');
 
-function addViewbox(message, input) {
+function addViewbox(message, input, paths = []) {
 	tape(message, async t => {
-		await svgoViewBox({
-			input
-		});
+		await svgoViewBox(
+			{
+				input
+			},
+			paths
+		);
 
 		const files = await getFiles(resolve(input || process.cwd()));
 
@@ -33,3 +36,7 @@ function addViewbox(message, input) {
 addViewbox('Adds viewBox to files in a folder');
 addViewbox('Adds viewBox to files in a folder', './assets');
 addViewbox('Adds viewBox to a single file', './assets2/logo.svg');
+
+addViewbox('Adds viewBox to files in a folder', undefined, ['./assets', './assets2']);
+addViewbox('Adds viewBox to files in a folder', './assets', ['./assets/logo.svg', './assets2']);
+addViewbox('Adds viewBox to a single file', './assets2/logo.svg', ['./assets', './assets2/logo.svg']);
