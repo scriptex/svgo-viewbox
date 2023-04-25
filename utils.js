@@ -19,4 +19,26 @@ async function getFiles(dir) {
 	return [].concat(...files).filter(file => file.endsWith('.svg'));
 }
 
+async function getInputFiles(input) {
+	return !input ? [] : await getFiles(resolve(input));
+}
+
+async function getPathsFiles(paths) {
+	if (paths.length === 0) {
+		return [];
+	}
+
+	let result = [];
+
+	for (const path of paths) {
+		const files = await getInputFiles(path);
+
+		result = [...result, ...files];
+	}
+
+	return result;
+}
+
 exports.getFiles = getFiles;
+exports.getInputFiles = getInputFiles;
+exports.getPathsFiles = getPathsFiles;

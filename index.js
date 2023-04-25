@@ -6,25 +6,7 @@ const { readFile, writeFile } = require('fs').promises;
 
 const { optimize, loadConfig } = require('svgo');
 
-const { getFiles } = require('./utils');
-
-const getInputFiles = async input => (!input ? [] : await getFiles(resolve(input)));
-
-const getPathsFiles = async paths => {
-	if (paths.length === 0) {
-		return [];
-	}
-
-	let result = [];
-
-	for (const path of paths) {
-		const files = await getInputFiles(path);
-
-		result = [...result, ...files];
-	}
-
-	return result;
-};
+const { getInputFiles, getPathsFiles } = require('./utils');
 
 module.exports = async (args, paths) => {
 	let svgoConfig;
