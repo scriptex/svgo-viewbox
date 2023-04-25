@@ -1,34 +1,20 @@
 #!/usr/bin/env node
 
 const { resolve } = require('path');
-const { lstatSync, readFileSync } = require('fs');
-const { readdir, readFile, writeFile } = require('fs').promises;
+const { readFileSync } = require('fs');
+const { readFile, writeFile } = require('fs').promises;
 
 const { optimize, loadConfig } = require('svgo');
 
-async function getFiles(dir) {
-	if (lstatSync(dir).isFile()) {
-		return [dir];
-	}
+const { getInputFiles, getPathsFiles } = require('./utils');
 
-	const dirents = await readdir(dir, { withFileTypes: true });
-	const files = await Promise.all(
-		dirents.map(dirent => {
-			const res = resolve(dir, dirent.name);
-			return dirent.isDirectory() ? getFiles(res) : res;
-		})
-	);
-
-	return [].concat(...files);
-}
-
-module.exports = async args => {
-	const { input, svgoFile } = args;
-
-	/**
-	 * @type {any}
-	 */
+module.exports = async (args, paths) => {
 	let svgoConfig;
+	let { input, svgoFile } = args;
+
+	if (!input && paths.length === 0) {
+		input = process.cwd();
+	}
 
 	try {
 		svgoConfig = readFileSync(resolve(svgoFile));
@@ -38,14 +24,16 @@ module.exports = async args => {
 		svgoConfig = await loadConfig(resolve(__dirname, 'svgo.config.js'));
 	}
 
-	const folder = resolve(input);
-	const files = await getFiles(folder);
-	const paths = files.filter(file => file.endsWith('.svg'));
+	const inputFiles = await getInputFiles(input);
+	const pathsFiles = await getPathsFiles(paths);
+	const files = [...inputFiles, ...pathsFiles];
 
-	for (const path of paths) {
-		const data = await readFile(path, 'utf-8');
+	for (const file of files) {
+		const data = await readFile(file, 'utf-8');
+
+		// @ts-ignore
 		const result = optimize(data, svgoConfig);
 
-		await writeFile(path, result.data);
+		await writeFile(file, result.data);
 	}
 };

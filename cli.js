@@ -29,4 +29,4 @@ const cli = meow(
 	}
 );
 
-svgoViewBox(cli.flags);
+svgoViewBox(cli.flags, cli.input);
