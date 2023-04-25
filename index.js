@@ -8,11 +8,29 @@ const { optimize, loadConfig } = require('svgo');
 
 const { getFiles } = require('./utils');
 
-module.exports = async args => {
+const getInputFiles = async input => (!input ? [] : await getFiles(resolve(input)));
+
+const getPathsFiles = async paths => {
+	if (paths.length === 0) {
+		return [];
+	}
+
+	let result = [];
+
+	for (const path of paths) {
+		const files = await getInputFiles(path);
+
+		result = [...result, ...files];
+	}
+
+	return result;
+};
+
+module.exports = async (args, paths) => {
 	let svgoConfig;
 	let { input, svgoFile } = args;
 
-	if (!input) {
+	if (!input && paths.length === 0) {
 		input = process.cwd();
 	}
 
@@ -24,8 +42,9 @@ module.exports = async args => {
 		svgoConfig = await loadConfig(resolve(__dirname, 'svgo.config.js'));
 	}
 
-	const folder = resolve(input);
-	const files = await getFiles(folder);
+	const inputFiles = await getInputFiles(input);
+	const pathsFiles = await getPathsFiles(paths);
+	const files = [...inputFiles, ...pathsFiles];
 
 	for (const file of files) {
 		const data = await readFile(file, 'utf-8');
