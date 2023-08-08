@@ -1,5 +1,5 @@
 const { resolve } = require('path');
-const { execSync } = require('child_process');
+const { spawnSync } = require('child_process');
 const { existsSync, readFileSync, writeFileSync } = require('fs');
 
 const tape = require('tape');
@@ -54,8 +54,8 @@ function addViewbox(message, input, paths = []) {
 }
 
 function addViewboxCLI(message, input, args = '') {
-	tape('Executes CLI commands', async t => {
-		execSync(`./cli.js -i ${input} ${args}`);
+	tape(message, async t => {
+		spawnSync(`./cli.js -i ${input} ${args}`, { shell: false });
 
 		await executeTest(input, t);
 	});
