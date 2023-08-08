@@ -16,7 +16,7 @@ module.exports = async (args, paths) => {
 	}
 
 	try {
-		svgoConfig = loadConfig(resolve(svgoFile));
+		svgoConfig = await loadConfig(resolve(svgoFile));
 	} catch (e) {
 		console.warn('Invalid or missing SVGO config file! Using default.');
 
