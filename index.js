@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const { resolve } = require('path');
-const { readFileSync } = require('fs');
 const { readFile, writeFile } = require('fs').promises;
 
 const { optimize, loadConfig } = require('svgo');
@@ -17,7 +16,7 @@ module.exports = async (args, paths) => {
 	}
 
 	try {
-		svgoConfig = readFileSync(resolve(svgoFile));
+		svgoConfig = loadConfig(resolve(svgoFile));
 	} catch (e) {
 		console.warn('Invalid or missing SVGO config file! Using default.');
 
