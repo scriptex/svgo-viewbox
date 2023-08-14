@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const meow = require('meow');
-const svgoViewBox = require('.');
+import meow from 'meow';
+import svgoViewBox from './index.mjs';
 
 const cli = meow(
 	`
@@ -16,14 +16,15 @@ const cli = meow(
 	  $ svgo-viewbox --input ./assets/images/svg --svgo-file ./svgo.config.js
 `,
 	{
+		importMeta: import.meta,
 		flags: {
 			input: {
 				type: 'string',
-				alias: 'i'
+				shortFlag: 'i'
 			},
 			svgoFile: {
 				type: 'string',
-				alias: 'f'
+				shortFlag: 'f'
 			}
 		}
 	}

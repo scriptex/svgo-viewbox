@@ -1,8 +1,9 @@
-const { resolve } = require('path');
-const { readdir } = require('fs').promises;
-const { lstatSync } = require('fs');
+import { resolve } from 'node:path';
+import { promises, lstatSync } from 'node:fs';
 
-async function getFiles(dir) {
+const { readdir } = promises;
+
+export async function getFiles(dir) {
 	if (lstatSync(dir).isFile()) {
 		return [dir].filter(file => file.endsWith('.svg'));
 	}
@@ -19,11 +20,11 @@ async function getFiles(dir) {
 	return [].concat(...files).filter(file => file.endsWith('.svg'));
 }
 
-async function getInputFiles(input) {
+export async function getInputFiles(input) {
 	return !input ? [] : await getFiles(resolve(input));
 }
 
-async function getPathsFiles(paths) {
+export async function getPathsFiles(paths) {
 	if (paths.length === 0) {
 		return [];
 	}
@@ -38,7 +39,3 @@ async function getPathsFiles(paths) {
 
 	return result;
 }
-
-exports.getFiles = getFiles;
-exports.getInputFiles = getInputFiles;
-exports.getPathsFiles = getPathsFiles;
