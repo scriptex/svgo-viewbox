@@ -927,10 +927,10 @@ svgo-add-viewbox@3.1.0:
   resolved "https://registry.yarnpkg.com/svgo-add-viewbox/-/svgo-add-viewbox-3.1.0.tgz#d7795c97784c583ca5b4b0b12883b09504c1363f"
   integrity sha512-hBpN3f6CsrhGLWBDY++n0Om9vsF5iC/hEExdS/hnZw6lXhHK+P9u3qZKWl4z6bHk61XcdhmV7hiLkJsDG4gaZA==
 
-svgo@3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/svgo/-/svgo-3.3.0.tgz#26d0b220f44ae96819ed6d040573334366fffa9b"
-  integrity sha512-y350OL6eAmhDbWcASdukXoG0MbpdfJQPHwEUAaTW1HBNSO2VErJ35fs7uNLSWjzFDhfua517RcouBzjZoO1JFg==
+svgo@3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/svgo/-/svgo-3.3.1.tgz#27f7b40017eeaff227b6f9caea646b1c242319f5"
+  integrity sha512-xQQTIGRl3gHTO2PFlZFLl+Xwofj+CMOPitfoByGBNAniQnY6SbGgd31u3C8RTqdlqZqYNl9Sb83VXbimVHcU6w==
   dependencies:
     "@trysound/sax" "0.2.0"
     commander "^7.2.0"
