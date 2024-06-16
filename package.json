@@ -39,7 +39,7 @@
 	},
 	"devDependencies": {
 		"svg-parser": "2.0.4",
-		"tape": "5.8.0"
+		"tape": "5.8.1"
 	},
 	"peerDependencies": {
 		"svgo": "^3.0.0",
