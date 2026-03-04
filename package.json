@@ -34,7 +34,7 @@
 	},
 	"dependencies": {
 		"meow": "14.0.0",
-		"svgo": "4.0.0",
+		"svgo": "4.0.1",
 		"svgo-add-viewbox": "3.1.0"
 	},
 	"devDependencies": {
