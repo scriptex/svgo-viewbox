@@ -33,7 +33,7 @@
 		"test": "tape test.mjs"
 	},
 	"dependencies": {
-		"meow": "14.0.0",
+		"meow": "14.1.0",
 		"svgo": "4.0.1",
 		"svgo-add-viewbox": "3.1.0"
 	},
